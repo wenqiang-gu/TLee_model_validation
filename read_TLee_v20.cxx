@@ -304,18 +304,18 @@ int main(int argc, char** argv)
   if (0) {
 
     vector<int>vc_target_chs; // 1,2: Emu, 3,4: costheta, 5,6: Ehad
-    vc_target_chs.push_back(5); 
-    vc_target_chs.push_back(6);
+    // vc_target_chs.push_back(5); 
+    // vc_target_chs.push_back(6);
     
     // vc_target_chs.push_back(3);
     // vc_target_chs.push_back(4);
     
-    // vc_target_chs.push_back(1);
-    // vc_target_chs.push_back(2);
+    vc_target_chs.push_back(1);
+    vc_target_chs.push_back(2);
 
     vector<int>vc_support_chs; // empty means no constrinat
-    vc_support_chs.push_back(1);
-    vc_support_chs.push_back(2);
+    // vc_support_chs.push_back(1);
+    // vc_support_chs.push_back(2);
     // vc_support_chs.push_back(3);
     // vc_support_chs.push_back(4);
     // vc_support_chs.push_back(5);
@@ -323,7 +323,6 @@ int main(int argc, char** argv)
     // int Exe_Goodness_of_fit(vector<int> vc_target_chs, vector<int> vc_support_chs, int index);
     Lee_test->Exe_Goodness_of_fit(vc_target_chs, vc_support_chs, 11); // better to be > 8
   }
-
 
   if( 1 ) {
     vector<int>vc_target_chs;
@@ -334,7 +333,7 @@ int main(int argc, char** argv)
     // for(int idx=1; idx<=20; idx++) vc_target_chs.push_back(15*2 + 21 + idx-1);
 
     for(int idx=1; idx<=15; idx++) vc_target_chs.push_back(idx-1); // E_mu bins:FC
-    // for(int idx=1; idx<=15; idx++) vc_target_chs.push_back(15+idx-1); // E_mu bins: PC
+    for(int idx=1; idx<=15; idx++) vc_target_chs.push_back(15+idx-1); // E_mu bins: PC
 
     vector<int>vc_support_chs;
     // for(int idx=1; idx<=15; idx++) vc_support_chs.push_back(idx-1); // E_mu bins
@@ -345,6 +344,55 @@ int main(int argc, char** argv)
 
 
     Lee_test->Exe_Goodness_of_fit_detailed( vc_target_chs, vc_support_chs, 10001 );
+
+
+  }
+
+  if( 1 ) {
+    vector<int>vc_target_chs;
+    // for(int idx=1; idx<=16; idx++) vc_target_chs.push_back(15*2+21*2+idx-1); // E_had bins
+    // for(int idx=1; idx<=16; idx++) vc_target_chs.push_back(15*2+21*2+16+idx-1);
+
+    for(int idx=1; idx<=20; idx++) vc_target_chs.push_back(15*2 + idx-1 ); // cos_theta bins
+    for(int idx=1; idx<=20; idx++) vc_target_chs.push_back(15*2 + 21 + idx-1);
+
+    // for(int idx=1; idx<=15; idx++) vc_target_chs.push_back(idx-1); // E_mu bins:FC
+    // for(int idx=1; idx<=15; idx++) vc_target_chs.push_back(15+idx-1); // E_mu bins: PC
+
+    vector<int>vc_support_chs;
+    for(int idx=1; idx<=15; idx++) vc_support_chs.push_back(idx-1); // E_mu bins
+    for(int idx=1; idx<=15; idx++) vc_support_chs.push_back(15+idx-1);
+
+    // for(int idx=1; idx<=20; idx++) vc_support_chs.push_back(15*2 + idx-1 ); // cos_theta bins
+    // for(int idx=1; idx<=20; idx++) vc_support_chs.push_back(15*2 + 21 + idx-1);
+
+
+    Lee_test->Exe_Goodness_of_fit_detailed( vc_target_chs, vc_support_chs, 10002 );
+
+
+  }
+
+
+  if( 1 ) {
+    vector<int>vc_target_chs;
+    for(int idx=1; idx<=16; idx++) vc_target_chs.push_back(15*2+21*2+idx-1); // E_had bins
+    for(int idx=1; idx<=16; idx++) vc_target_chs.push_back(15*2+21*2+16+idx-1);
+
+    // for(int idx=1; idx<=20; idx++) vc_target_chs.push_back(15*2 + idx-1 ); // cos_theta bins
+    // for(int idx=1; idx<=20; idx++) vc_target_chs.push_back(15*2 + 21 + idx-1);
+
+    // for(int idx=1; idx<=15; idx++) vc_target_chs.push_back(idx-1); // E_mu bins:FC
+    // for(int idx=1; idx<=15; idx++) vc_target_chs.push_back(15+idx-1); // E_mu bins: PC
+
+    vector<int>vc_support_chs;
+    for(int idx=1; idx<=15; idx++) vc_support_chs.push_back(idx-1); // E_mu bins
+    for(int idx=1; idx<=15; idx++) vc_support_chs.push_back(15+idx-1);
+
+    for(int idx=1; idx<=20; idx++) vc_support_chs.push_back(15*2 + idx-1 ); // cos_theta bins
+    for(int idx=1; idx<=20; idx++) vc_support_chs.push_back(15*2 + 21 + idx-1);
+
+
+    Lee_test->Exe_Goodness_of_fit_detailed( vc_target_chs, vc_support_chs, 10003 );
 
 
   }

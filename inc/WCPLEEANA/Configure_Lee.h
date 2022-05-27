@@ -31,7 +31,7 @@ namespace config_Lee
   ////////// systematics flag
   
   bool flag_syst_flux_Xs    = 1;
-  bool flag_syst_detector   = 0;
+  bool flag_syst_detector   = 1;
   bool flag_syst_additional = 1;
   bool flag_syst_mc_stat    = 1;
 
